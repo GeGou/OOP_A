@@ -1,7 +1,8 @@
 // header file
 
 ////////////////////////////////
-class Base {
+class Base 
+{
 private:
 public:
     Base();
@@ -9,10 +10,11 @@ public:
 };
 
 ////////////////////////////////
-class Book {
+class Book 
+{
 private:
     const char* title;
-    const char* name;
+    const char* author;
     int isbn;
 public:
     Book(const char*, const char*, int);
@@ -23,7 +25,8 @@ public:
 
 
 ////////////////////////////////
-class Shelf {
+class Shelf
+{
 private:
     Book** books;
     int sum;
@@ -39,7 +42,8 @@ public:
 
 
 ////////////////////////////////
-class Closet {
+class Closet
+{
 private:
     Shelf s1;
     Shelf s2;
@@ -56,7 +60,8 @@ public:
 
 
 ///////////////////////////////
-class Bookcase {
+class Bookcase
+{
 private:
     Shelf s1;
     Shelf s2;

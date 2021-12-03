@@ -28,15 +28,16 @@ private:
     int k;
     int last_open;
     int last_serve;
+    void exit();
+    bool check_to_open();
+    bool check_to_close();
+    void open(int);
+    void close(int);
+    int waiting_customers();
     Cashier** cashiers;
 public:
     Bank(int, int);     // k, l
     ~Bank();
     bool enter();
     void serve();
-    void exit();
-    bool check_to_open();
-    bool check_to_close();
-    void open(int);
-    void close(int);
 };

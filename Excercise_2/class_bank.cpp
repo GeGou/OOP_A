@@ -91,7 +91,7 @@ void Bank::exit() {
 }
 
 bool Bank::check_to_open() {
-    if ((Bank::last_customer - Bank::curr_serving) > (Bank::open_cashiers * Bank::k)) {
+    if ((Bank::waiting_customers()) > (Bank::open_cashiers * Bank::k)) {
         return false;
     }
     return true;
@@ -99,7 +99,7 @@ bool Bank::check_to_open() {
 
 bool Bank::check_to_close() {
     int x = Bank::open_cashiers;
-    if ((Bank::last_customer - Bank::curr_serving) <= (--x * Bank::k)) {
+    if ((Bank::waiting_customers()) <= (--x * Bank::k)) {
         return false;
     }
     return true;
@@ -116,6 +116,10 @@ void Bank::close(int i) {
     Bank::cashiers[i]->close();
     Bank::open_cashiers--;
     cout << "Cashier " << ++i << " closed." << endl;
+}
+
+int Bank::waiting_customers() {
+    return Bank::last_customer - Bank::curr_serving;
 }
 
 Bank::~Bank() {

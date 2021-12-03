@@ -34,16 +34,19 @@ int main (int argc, char* argv[]) {
             }
             cout << endl;
         }
-        // enter and serving the last customers who didn't enter at first
-        // for (int i = 0 ; i < not_entered ; i++) {
-        //     bank.enter();
-        // }
-        // for (int i = 0 ; i < not_entered ; i++) {
-        //     bank.serve();
-        // }
-
-        cout << "Entered: " << entered << endl;
+        cout << "Entered: " << m * entered << endl;
         cout << "Not entered: " << not_entered << endl;
+
+        // enter and serving the last customers who didn't enter at first
+        int last_entered = 0;
+        for (int i = 0 ; i < not_entered ; i++) {
+            if (bank.enter() == true) {
+                last_entered++;
+            }
+        }
+        for (int i = 0 ; i < last_entered ; i++) {
+            bank.serve();
+        }
     }
     else {
         cout << "Wrong given arguments." << endl;
