@@ -35,6 +35,8 @@ g++ -o myprog bank.cpp class_bank.cpp class_cashier.cpp
 ./myprog 4 3 12 7
 ./myprog 2 6 20 7
 
+Εντολη για ελεχνος leaks και errors:
+
 valgrind --leak-check=full \
          --show-leak-kinds=all \
          --track-origins=yes \

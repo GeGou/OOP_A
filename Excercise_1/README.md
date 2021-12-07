@@ -46,6 +46,8 @@ g++ bookcase.cpp classes.cpp -o myprog
 ./myprog 1 15 5 6 -> error
 ./myprog 2 5 10 -> error
 
+Εντολη για ελεχνος leaks και errors:
+
 valgrind --leak-check=full \
          --show-leak-kinds=all \
          --track-origins=yes \
