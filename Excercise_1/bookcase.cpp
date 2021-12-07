@@ -35,7 +35,8 @@ int main (int argc, char* argv[])
 
         Bookcase bookcase(nmax);      // construction of the library
         // creation of all books
-        Book* books[l];      // array of L books
+        Book** books;      // array of L books
+        books = new Book*[l];
         for (int i = 0 ; i < l ; i++)
         {
             int isbn = rand() % 8999 + 1000;        // 4 digit isbn
@@ -64,6 +65,7 @@ int main (int argc, char* argv[])
         {
             delete books[i];
         }
+        delete[] books;
     }
     else
     {
